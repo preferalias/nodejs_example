@@ -1,0 +1,15 @@
+{
+ 
+  "development": {
+    "DB_URI" : "mysql://root:password@localhost:3306/sample_ecom"
+  },
+
+  "test": {
+    "DB_URI" : ""
+  },
+
+  "production": {
+    "DB_URI" : ""
+  }
+
+}

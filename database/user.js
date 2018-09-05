@@ -11,10 +11,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     } 
-  },
-  {
-    classMethods: {
-      validPassword: (password, passwd, done, user) => {
+  })
+/*
+  User.validPassword = (password, passwd, done, user) => {
         bcrypt.compare(password, passwd, (err, isMatch) => {
           if(err) console.log(err)
           if(isMatch){
@@ -24,9 +23,6 @@ module.exports = (sequelize, DataTypes) => {
           }
         })
       }
-    }
-  })
-
   User.beforeCreate((user, options) => {
     return cryptPassword(user.password)
       .then(success => {
@@ -49,5 +45,6 @@ module.exports = (sequelize, DataTypes) => {
       })
     })
   }
+  */
   return User;
 }
