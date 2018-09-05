@@ -1,3 +1,4 @@
+'use strict'
 const session = require('express-session')
 const express = require('express')
 const app = express()
@@ -6,6 +7,7 @@ const Constant = require('./constant')
 const products = require('./routes/products')
 const db = require('./database')
 const passport = require('passport')
+const cors = require('cors')
 
 let port = Constant.PORT || 3000
 
@@ -17,6 +19,7 @@ db.sequelize.authenticate()
   .then(() => console.log('Connection success'))
   .catch(err => console.log(err));
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(session({
